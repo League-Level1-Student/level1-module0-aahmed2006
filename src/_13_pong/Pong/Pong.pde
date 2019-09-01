@@ -4,18 +4,13 @@ int speed = 5;
 void setup() {
   size(300, 300);
 }
-
 void draw() {
   background(#0A0A0A);
   fill(#AE2DDE);
   noStroke();
   ellipse(x, y, 15, 15);
   x+=speed;
-  if(x>=300) {
-    x-=speed;
-  } if(x<=0) {
-    x+=speed;
-  }
+ 
   fill(#FFFFFF);
   rect(mouseX, 290, 50, 10);
 }
