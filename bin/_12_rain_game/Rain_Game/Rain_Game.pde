@@ -21,15 +21,13 @@ void draw() {
   }
   fill(#A5A5A5);
   rect(mouseX, 350, 50, 30);
-  checkCatch(randomNumber);
+  checkCatch(randomNumber, y);
   fill(#FFFFFF);
   textSize(16);
   text("Score: " + score, 20, 20);
   }
-  void checkCatch(int x){
-         if (x > mouseX && x < mouseX+50)
+  void checkCatch(int x, int y){
+         if (x > mouseX && x < mouseX && y<350)
             score++;
-         else if (score > 0) 
-            score--;
         println("Your score is now: " + score);
     }
