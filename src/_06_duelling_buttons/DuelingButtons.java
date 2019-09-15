@@ -15,17 +15,16 @@ import javax.swing.JPanel;
 
 public class DuelingButtons implements ActionListener {
 
-	JButton leftButton = new JButton();
-	JButton rightButton = new JButton();
+	public static JButton leftButton = new JButton();
+	public static JButton rightButton = new JButton();
 
 	Dimension BIG = new Dimension(400, 400);
 	Dimension SMALL = new Dimension(200, 200);
 
-	JFrame frame = new JFrame();
-	JPanel panel = new JPanel();
+	public static JFrame frame = new JFrame();
+	public static JPanel panel = new JPanel();
 
-	public void run() {
-
+	public static void main(String[] args) {
 		// 1. Add the panel to the frame
 		frame.add(panel);
 		// 2. Make the frame visible
@@ -36,7 +35,7 @@ public class DuelingButtons implements ActionListener {
 		rightButton.setText("Click me!");
 		// 5. Add an action listener to the leftButton
 		leftButton.addActionListener(null);
-		// 6. Add an action listener to the rightButto
+		// 6. Add an action listener to the rightButton
 		rightButton.addActionListener(null);
 		// 7. Add the leftButton to the panel
 		panel.add(leftButton);
@@ -46,19 +45,11 @@ public class DuelingButtons implements ActionListener {
 		frame.pack();
 		// 10. Set the title of the frame to "Demanding Buttons"
 		frame.setTitle("Demanding Buttons");
+		
 	}
 
-	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		JButton buttonPressed = (JButton) arg0.getSource();
-
-		/* If the buttonPressed was the leftButton.... */
-		// Set the text of the rightButton to "No, click Me!"
-		// Set the PREFERRED size of the rightButton to BIG
-		// Set the text of the leftButton to "Click Me!"
-		// Set the PREFERRED size of the leftButton to SMALL
-
-		/* If the buttonPressed was the rightButton, do the opposite. */
 if(buttonPressed == leftButton) {
 	rightButton.setText("No, click ME!");
 	rightButton.setSize(BIG);
