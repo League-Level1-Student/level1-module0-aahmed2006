@@ -8,18 +8,17 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+
 public class FortuneCookie implements ActionListener {
 	 public void showButton() {
          JFrame frame = new JFrame();
          frame.setVisible(true);
          JButton button = new JButton();
+         button.setText("Click to read your fortune!");
          frame.add(button);
          frame.pack();
          button.addActionListener(this);
-         int random = new Random().nextInt(5);
-         if(random==0) {
-        	
-         }
+         
     }
 	 public static void main(String[] args) {
          new FortuneCookie().showButton();
@@ -29,7 +28,19 @@ public class FortuneCookie implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		JOptionPane.showMessageDialog(null, "woohoo");
+		int rand = new Random().nextInt(5);
+		if(rand == 0) {
+			JOptionPane.showMessageDialog(null, "fortune 1");
+		} else if(rand == 1) {
+			JOptionPane.showMessageDialog(null, " fortune 2");
+		} else if(rand == 2) {
+			JOptionPane.showMessageDialog(null, " fortune 3");
+		} else if(rand == 3) {
+			JOptionPane.showMessageDialog(null, " fortune 4");
+		} else if(rand == 4) {
+			JOptionPane.showMessageDialog(null, " fortune 5");
+		}
+		
 		
 	}
 }

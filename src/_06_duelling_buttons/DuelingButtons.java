@@ -25,6 +25,8 @@ public class DuelingButtons implements ActionListener {
 	public static JPanel panel = new JPanel();
 
 	public static void main(String[] args) {
+		
+	 
 		// 1. Add the panel to the frame
 		frame.add(panel);
 		// 2. Make the frame visible
@@ -47,20 +49,31 @@ public class DuelingButtons implements ActionListener {
 		frame.setTitle("Demanding Buttons");
 		
 	}
+	
+		
+	
 
 	public void actionPerformed(ActionEvent arg0) {
 		JButton buttonPressed = (JButton) arg0.getSource();
 if(buttonPressed == leftButton) {
-	rightButton.setText("No, click ME!");
 	rightButton.setSize(BIG);
-	leftButton.setText("Click me!");
+	rightButton.setText("No, click ME!");
 	leftButton.setSize(SMALL);
+	leftButton.setText("Click me!");
 } else {
-	leftButton.setText("No, click ME!");
 	leftButton.setSize(BIG);
-	rightButton.setText("Click me!");
+	leftButton.setText("No, click ME!");
 	rightButton.setSize(SMALL);
+	rightButton.setText("Click me!");
 }
 		frame.pack();
 	}
+
+
+
+
+	 
+		// TODO Auto-generated method stub
+		
+	
 }

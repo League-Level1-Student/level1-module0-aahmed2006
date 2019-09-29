@@ -26,12 +26,12 @@ public class BodyPartQuiz {
 	String thirdImage = "src/_05_body_part_quiz/morgan.jpeg";
 	String fourthImage = "src/_05_body_part_quiz/jack.jpeg";
 
-	JFrame window = new JFrame();
-	JPanel panel = new JPanel();
+	static JFrame window = new JFrame();
+	static JPanel panel = new JPanel();
 
 	public void run() {
 		initializeGui();
-		startQuiz();
+		
 	}
 
 	private void initializeGui() {
@@ -48,7 +48,8 @@ public class BodyPartQuiz {
 
 	}
 
-	private void startQuiz() {
+	public static void main(String[] args) {
+		
 
 		// 1. Make an int variable to hold the score.
 		int score = 0;
@@ -77,7 +78,7 @@ public class BodyPartQuiz {
 		JOptionPane.showMessageDialog(null, "Your score is " + score + ".");
 	}
 
-	public void showNextImage() {
+	public static void showNextImage() {
 		panel.removeAll();
 		panel.add(getNextImage());
 		window.setVisible(true);
@@ -90,7 +91,7 @@ public class BodyPartQuiz {
 	}
 
 	ArrayList<JLabel> imageList = new ArrayList<JLabel>();
-	Iterator<JLabel> imageIterator;
+	static Iterator<JLabel> imageIterator;
 
 	private void initializeImageList() {
 		JLabel imageLabel = loadImage(firstImage);
@@ -103,7 +104,7 @@ public class BodyPartQuiz {
 		imageList.add(imageLabel);
 	}
 
-	private JLabel getNextImage() {
+	private static JLabel getNextImage() {
 		if (imageIterator.hasNext())
 			return imageIterator.next();
 		System.exit(0);
