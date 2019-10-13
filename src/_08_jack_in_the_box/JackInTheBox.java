@@ -1,7 +1,5 @@
 package _08_jack_in_the_box;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.net.URL;
 
 import javax.swing.Icon;
@@ -10,24 +8,16 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import _07_fortune_cookie.FortuneCookie;
-
-public class JackInTheBox implements ActionListener {
-	public JackInTheBox() {
+public class JackInTheBox {
+	public void run() {
 		JFrame frame = new JFrame();
-		frame.setVisible(true);
+		frame.isVisible();
 		JButton button = new JButton();
 		button.setText("Surprise!");
 		frame.add(button);
 		frame.pack();
-		button.addActionListener(this);
 	}
-	
-	public static void main(String[] args) {
-        new JackInTheBox();
-        
-  }
-	private void showPicture(String fileName) {
+	public void showPicture(String fileName) {
 	    try {
 	        JLabel imageLabel = createLabelImage(fileName);
 	        JFrame frame = new JFrame();
@@ -38,14 +28,14 @@ public class JackInTheBox implements ActionListener {
 	        e.printStackTrace();
 	    }
 	}
-	public JLabel createLabelImage(String fileName) {
+	private JLabel createLabelImage(String fileName) {
 		try {
-	            URL jackInTheBox = getClass().getResource(fileName);
-	            if (jackInTheBox == null) {
+	            URL imageURL = getClass().getResource(fileName);
+	            if (imageURL == null) {
 		       System.err.println("Could not find image " + fileName);
 		       return new JLabel();
 	            } else {
-	                Icon icon = new ImageIcon(jackInTheBox);
+	                Icon icon = new ImageIcon(imageURL);
 	                JLabel imageLabel = new JLabel(icon);
 	                return imageLabel;
 	            }
@@ -53,11 +43,5 @@ public class JackInTheBox implements ActionListener {
 	            System.err.println("Could not find image " + fileName);
 	            return new JLabel();
 	        }
-		
-	}
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		//showPicture();
 	}
 }

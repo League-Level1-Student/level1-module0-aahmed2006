@@ -29,10 +29,7 @@ public class BodyPartQuiz {
 	static JFrame window = new JFrame();
 	static JPanel panel = new JPanel();
 
-	public void run() {
-		initializeGui();
-		
-	}
+	
 
 	private void initializeGui() {
 		initializeImageList();
@@ -48,8 +45,8 @@ public class BodyPartQuiz {
 
 	}
 
-	public static void main(String[] args) {
-		
+	public void run(){
+		initializeGui();
 
 		// 1. Make an int variable to hold the score.
 		int score = 0;

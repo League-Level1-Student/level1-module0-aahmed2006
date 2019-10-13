@@ -20,11 +20,7 @@ public class FortuneCookie implements ActionListener {
          button.addActionListener(this);
          
     }
-	 public static void main(String[] args) {
-         new FortuneCookie().showButton();
-         
-   }
-	
+	 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
