@@ -7,15 +7,20 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class JackInTheBox {
 	public void run() {
 		JFrame frame = new JFrame();
-		frame.isVisible();
+		JPanel panel = new JPanel();
 		JButton button = new JButton();
-		button.setText("Surprise!");
-		frame.add(button);
+		frame.isVisible();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		button.setText("surprise");
+		panel.add(button);
+		frame.add(panel);
 		frame.pack();
+		
 	}
 	public void showPicture(String fileName) {
 	    try {
