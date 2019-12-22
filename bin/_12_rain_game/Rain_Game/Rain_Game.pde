@@ -3,6 +3,7 @@ int x = (int) random(400);
 int score = 0;
 int width = 20;
 int height = 20;
+int bucket = 350;
 void setup(){
   size(400, 400);
 }
@@ -20,13 +21,12 @@ void draw() {
   }
   fill(#A5A5A5);
   rect(mouseX, 350, 50, 30);
-  //checkCatch(x, y);
+  if(width > mouseX && 20 < mouseX+100  ) {
+    score++;
+    println("Your score is now: " + score);
+  }
   fill(#FFFFFF);
   textSize(16);
   text("Score: " + score, 20, 20);
   }
-  void checkCatch(int x, int y){
-         if (x > mouseX && x < mouseX && y<350)
-            score++;
-        println("Your score is now: " + score);
-    }
+ 
